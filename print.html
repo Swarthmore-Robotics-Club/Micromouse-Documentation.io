@@ -1,0 +1,339 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Swarthmore Robotics Club Docs</title>
+        
+        <meta name="robots" content="noindex" />
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div id="sidebar-scrollbox" class="sidebar-scrollbox">
+                <ol class="chapter"><li class="expanded affix "><a href="introduction.html">Introduction</a></li><li class="expanded "><a href="micromouse/micromouse_intro.html"><strong aria-hidden="true">1.</strong> Micromouse Project</a></li><li><ol class="section"><li class="expanded "><a href="micromouse/parts_checklist.html"><strong aria-hidden="true">1.1.</strong> Parts Checklist</a></li><li class="expanded "><a href="micromouse/chassis.html"><strong aria-hidden="true">1.2.</strong> Chassis</a></li><li class="expanded "><a href="micromouse/microcontrollers.html"><strong aria-hidden="true">1.3.</strong> Microcontrollers</a></li><li class="expanded "><a href="micromouse/stm32_1.html"><strong aria-hidden="true">1.4.</strong> STM32 and Teensy Setup</a></li><li class="expanded "><a href="micromouse/sensors.html"><strong aria-hidden="true">1.5.</strong> Micromouse Sensors</a></li><li class="expanded "><a href="micromouse/Motors_and_encoders.html"><strong aria-hidden="true">1.6.</strong> Micromouse Motor and Encoders</a></li><li class="expanded "><a href="micromouse/high_level.html"><strong aria-hidden="true">1.7.</strong> Micromouse High Level Software</a></li></ol></li><li class="expanded "><a href="Softwaresetup.html"><strong aria-hidden="true">2.</strong> Software We use</a></li><li><ol class="section"><li class="expanded "><a href="software/arduino_IDE.html"><strong aria-hidden="true">2.1.</strong> Arduino IDE</a></li><li class="expanded "><a href="software/vs_code.html"><strong aria-hidden="true">2.2.</strong> Visual Studio Code</a></li><li class="expanded "><a href="software/autocad.html"><strong aria-hidden="true">2.3.</strong> AutoCad</a></li><li class="expanded "><a href="software/github.html"><strong aria-hidden="true">2.4.</strong> Git/Github</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Swarthmore Robotics Club Docs</h1>
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#introduction" id="introduction">Introduction</a></h1>
+<p>This book contains information on the various projects that the Swarthmore Robotics Club (SRC)
+The club right now has a focus on the micromouse project but hopes to expand into various areas. 
+The purpose of this book is to document our experiences pursuing various robotics projects in hopes to get new members up to speed or help anyone who might be lost on the way</p>
+<h2><a class="header" href="#who-this-book-is-for" id="who-this-book-is-for">Who this book is for</a></h2>
+<p>This online book is meant for anyone aspiring to learn robotics, regardless if they are a member of Swarthmore robotics or not. Of course we would love to have anyone who is eligible join Swarthmore robotics but we also believe that anyone that puts their time into learning the craft</p>
+<h2><a class="header" href="#robotics-as-a-whole" id="robotics-as-a-whole">Robotics as a whole</a></h2>
+<h2><a class="header" href="#roles" id="roles">Roles</a></h2>
+<h2><a class="header" href="#how-this-book-was-made" id="how-this-book-was-made">How this book was made</a></h2>
+<p>This book was made and compiled using <a href="https://github.com/rust-lang/mdBook">mdbook</a>, a rust based markdown to html project. </p>
+<h2><a class="header" href="#github-repo" id="github-repo">Github Repo</a></h2>
+<p>A github repository of all of our projects can be found <a href="https://github.com/Swarthmore-Robotics-Club?type=source">here</a></p>
+<h1><a class="header" href="#the-micromouse-project" id="the-micromouse-project">The micromouse project</a></h1>
+<p>One of the main projects of SRC is to build a micromouse robot. 
+The purpose of this robot is to solve a physical maze using an autonomous wheeled robot. </p>
+<h2><a class="header" href="#video-link-of-a-micromouse-robot-in-action" id="video-link-of-a-micromouse-robot-in-action">Video link of a micromouse robot in action</a></h2>
+<p><a href="https://youtu.be/%5DNqdZ9wbXt8k" title="Micromouse video"><img src="micromouse/../Images/micromouse_video.png" alt="Micromouse" /></a></p>
+<h2><a class="header" href="#rules" id="rules">Rules</a></h2>
+<p>The rules of the micromouse vary from region to region but the following usually hold.</p>
+<ol>
+<li>The maze consist of square cells of width 16.8 cm</li>
+<li>The mouse is alloted a time slot to traverse to the goal as fast as possible</li>
+<li>The mouse begins a &quot;run&quot; when it starts moving from the start. The run ends once the mouse reaches the center.</li>
+<li>The team is judged on the fastest run. Sometimes fastest first run (mapping run)</li>
+<li>The mouse is </li>
+</ol>
+<h2><a class="header" href="#challenges" id="challenges">Challenges</a></h2>
+<p>The micromouse robot introduces a set of challenges involving the integration of sotware models with real world limitations.</p>
+<ul>
+<li>Finding out where the mouse is in the maze</li>
+<li>Making sure the mouse drives in a reliable way</li>
+<li>Mapping the maze as the mouse traverses it</li>
+<li>Finding the shortest path to the goal of the maze</li>
+</ul>
+<h2><a class="header" href="#resources" id="resources">Resources</a></h2>
+<p>Two websites form as great resources for the micromouse</p>
+<p><a href="http://greenye.net/">Green ye's blog</a></p>
+<p><a href="http://micromouseusa.com/">And his micromouse USA website</a></p>
+<p>Green's blog has a good set of parts checklist and pictures that are useful for design and the micrmouse USA website goes into depth on many common challenges one has to overcome when designing a micromouse.</p>
+<h1><a class="header" href="#parts-checklist" id="parts-checklist">Parts Checklist</a></h1>
+<p>The micromouse requires a variety of parts to properly function. They are all necessary to answer the set of following questions</p>
+<ul>
+<li>How is the mouse structured?</li>
+<li>Where in the maze is the mouse?</li>
+<li>Where are the walls of the maze</li>
+<li>What set of rules/guidelines does the mouse use to automatically solve the maze?</li>
+</ul>
+<h2><a class="header" href="#a-href--bookmicromousechassishtml--part-1-chassis-a" id="a-href--bookmicromousechassishtml--part-1-chassis-a"><a href = "/book/micromouse/chassis.html" > Part 1 Chassis </a></a></h2>
+<p>The body of the micromouse. It holds all the electronics in place and functions as a foundation on</p>
+<h2><a class="header" href="#a-href--bookmicromousemicrocontrollershtml--part-2-microcontroller-a" id="a-href--bookmicromousemicrocontrollershtml--part-2-microcontroller-a"><a href = "/book/micromouse/microcontrollers.html" > Part 2 Microcontroller </a></a></h2>
+<h2><a class="header" href="#a-href--bookmicromousemotors_and_encodershtml--part-3-motors-and-encoders-a" id="a-href--bookmicromousemotors_and_encodershtml--part-3-motors-and-encoders-a"><a href = "/book/micromouse/Motors_and_encoders.html" > Part 3 Motors and Encoders </a></a></h2>
+<h2><a class="header" href="#a-href--bookmicromousesensorshtml--part-4-sensors-a" id="a-href--bookmicromousesensorshtml--part-4-sensors-a"><a href = "/book/micromouse/sensors.html" > Part 4 Sensors </a></a></h2>
+<h1><a class="header" href="#chassis" id="chassis">Chassis</a></h1>
+<h1><a class="header" href="#microcontrollers" id="microcontrollers">Microcontrollers</a></h1>
+<p>Microcontrollers are the central processor which coordinates the various sensors and motors in the micromouse. They allow one to very easily create programmable logic to voltage readings from sensor values which can become output voltages to other devices such as motors or audio equipment.</p>
+<p>Right now the micromouse uses the STM32 and Teensy 4.0 set of microcontrollers.
+Below are quick summary of the microcontrollers one can expect to run into when working with SRC.</p>
+<h2><a class="header" href="#arduino-uno-board" id="arduino-uno-board">Arduino UNO Board</a></h2>
+<div style="text-align:center"><img src = "../Images/microcontrollers/arduinoUno.jpg" /></div>
+<p>The Arduino Uno is one of the most widely used starter boards in embedded systems programming. It comes with various digital and PWM pins and makes it easy for anyone to upload Arduino code onto it using the Arduino IDE.</p>
+<h2><a class="header" href="#stm32-board" id="stm32-board">STM32 Board</a></h2>
+<p><img src="micromouse/../Images/stm32pinout.png" alt="pin-out for the sm32" /></p>
+<p>The STM32 board is a more powerful microcontroller than the Arduino Uno and carries much more memory space.</p>
+<h2><a class="header" href="#teensy-40-board" id="teensy-40-board">Teensy 4.0 Board</a></h2>
+<p>and Here is the pin-out for the Teensy</p>
+<div style="text-align:center"><img src = "../Images/teensy40_pinout1.png" /></div>
+<p>Below are the specifications for the two microcontrollers
+(GP stands for General Purpose)
+(GPIO stands for General Purpose Input/Output)</p>
+<table><thead><tr><th>Specification</th><th align="center">STM32F1</th><th align="center">Teensy 4.0</th></tr></thead><tbody>
+<tr><td>CPU Type</td><td align="center">Arm 32-bit Cortex  M3- CPU</td><td align="center">ARM Cortex-M7</td></tr>
+<tr><td>CPU Frequency</td><td align="center">72 MHz</td><td align="center">48 Mhz  up to 600 MHz</td></tr>
+<tr><td>Output Voltage</td><td align="center">2.0 to 3.6 V</td><td align="center">3.3 Volts</td></tr>
+<tr><td>Input Voltage</td><td align="center">3 to 5 V (or usb)</td><td align="center">3 to 3.6 V (or usb)</td></tr>
+<tr><td>Current Consumption</td><td align="center">uhhh</td><td align="center">100 mA @ 600 MHz</td></tr>
+<tr><td>Flash Memory</td><td align="center">64 KB</td><td align="center">2048 KB</td></tr>
+<tr><td>RAM</td><td align="center">20 KB</td><td align="center">1024 KB</td></tr>
+<tr><td>Timers</td><td align="center">4 Timers</td><td align="center">2 GP timers (32 bit)</td></tr>
+<tr><td>Analog to Digital</td><td align="center">12 bit ADC (2)</td><td align="center">12 bit ADC (2)</td></tr>
+<tr><td>GPIO</td><td align="center">32</td><td align="center">40</td></tr>
+<tr><td>PWM</td><td align="center">20</td><td align="center">31</td></tr>
+<tr><td>Interrupts</td><td align="center">Yes</td><td align="center">Yes, all pins</td></tr>
+<tr><td>I2C</td><td align="center">2 Modules</td><td align="center">4 Modules</td></tr>
+<tr><td>SPI</td><td align="center">2 Modules</td><td align="center">4 Modules</td></tr>
+<tr><td>UART</td><td align="center">3 Channels</td><td align="center">$1</td></tr>
+<tr><td>Buy LINK</td><td align="center"><a href="micromouse/">link</a></td><td align="center"><a href="https://www.sparkfun.com/products/15583">link</a></td></tr>
+<tr><td>Spec Sheet</td><td align="center"><a href="https://www.st.com/resource/en/datasheet/stm32f103c8.pdf">link</a></td><td align="center"><a href="https://cdn.sparkfun.com/assets/3/5/3/7/3/IMXRT1060CEC_rev0_1.pdf">link</a></td></tr>
+</tbody></table>
+<h1><a class="header" href="#stm32--teensy-setup-stm32f103t--teensy-40" id="stm32--teensy-setup-stm32f103t--teensy-40">STM32 / Teensy Setup (STM32f103T / Teensy 4.0)</a></h1>
+<p>The teensy 4.0 and STM32 famility microcontrollers do not come with prebuilt Arduino IDE functionality but there are third party libraries that allow one to program these controllers using the Arduino IDE.</p>
+<h2><a class="header" href="#arduino_stm32" id="arduino_stm32">Arduino_STM32</a></h2>
+<p>There exists an stm32 library for Arduino. One can read the installation instructions from <a href="https://github.com/rogerclarkmelbourne/Arduino_STM32/wiki/Installation">here</a>. Follwing the instructions will allow the Arduino IDE to write to the STM32 family boards.</p>
+<p>Once you add the library, one can begin uploading Arduino Code to the STM32 family of microcontrollers. There are various ways to do this, from usb, to using external programmers. So far we have only had success using the ST-Link programmer to program the STM32 but tutorials to allow usb programming can be found <a href="micromouse/">here</a>.</p>
+<h3><a class="header" href="#using-the-st-link-to-upload-arduino-code" id="using-the-st-link-to-upload-arduino-code">Using the ST-Link to Upload Arduino Code</a></h3>
+<p>The ST link is a usb to serial programmer specficially for the STM32 family of microcontrollers. There is a set of sotware suites for the ST Link which are not necessary to upload code to it but useful for when you accidentally destroy your board.</p>
+<div style="text-align:center"><img width=400 src = "../Images/stmsetup/st_link.png" /></div>
+<p>Once you open the Arduino IDE</p>
+<ul>
+<li>go under tools and hover over to the boards section</li>
+<li>scroll down the boards menu to the &quot;STM32F1 boards&quot; section</li>
+<li>Select the &quot;Generic STM32F103T Series&quot; </li>
+<li>Back in the tools menu, make sure the &quot;Variant:&quot; tab has the right stm32 (20 kb RAM 64 kb Flash)</li>
+<li>Back in the tools menu hover over the &quot;Upload Method&quot; and select &quot;STLink&quot;</li>
+</ul>
+<p>You need to connect the ST-Link to the STM32 as follows:</p>
+<p>TODO </p>
+<p>TODO: INCLUDE PICTURES DESCRIBING WHAT PINS TO USE</p>
+<p>One can then upload normal Arduino Code to the STM32. One thing to note is that the pin numbers are best shown as the numbers on 
+<a href="micromouse//book/micromouse/microcontrollers.html#stm32-board"> The reference picture </a> (Note there is not underscore after the reference unlike in the picture so pin PA_7 is actually written as PA7)</p>
+<h2><a class="header" href="#teensyduino" id="teensyduino">Teensyduino</a></h2>
+<h1><a class="header" href="#micromouse-sensors" id="micromouse-sensors">Micromouse Sensors</a></h1>
+<h1><a class="header" href="#motors-and-encoders" id="motors-and-encoders">Motors and Encoders</a></h1>
+<p>The motors are responsible for physically moving the mouse through the maze. There are many types of motors that a team can choose for their mouse. Two popular motor types are stepper motors and dc motors</p>
+<p>One of the main problems introduced with dc motors is the fact that they are inherently unreliable.</p>
+<h2><a class="header" href="#driving-straight-pid-loop" id="driving-straight-pid-loop">Driving straight: PID Loop</a></h2>
+<p>One of the biggest obstacles to overcome </p>
+<h2><a class="header" href="#turning-around-corners" id="turning-around-corners">Turning around corners</a></h2>
+<h2><a class="header" href="#estimating-our-current-position" id="estimating-our-current-position">Estimating our current position</a></h2>
+<h2><a class="header" href="#coordinates-to-motor-velocities-differential-drive-to-unicycle-model" id="coordinates-to-motor-velocities-differential-drive-to-unicycle-model">Coordinates to motor velocities: Differential-Drive to Unicycle model</a></h2>
+<h1><a class="header" href="#micromouse-high-level-software" id="micromouse-high-level-software">Micromouse High Level Software</a></h1>
+<h1><a class="header" href="#software-used" id="software-used">Software used</a></h1>
+<p>We use a wide array of software to accomplish </p>
+<h1><a class="header" href="#arduino-ide" id="arduino-ide">Arduino IDE</a></h1>
+<h1><a class="header" href="#visual-studio-code" id="visual-studio-code">Visual Studio Code</a></h1>
+<h1><a class="header" href="#autocad" id="autocad">AutoCad</a></h1>
+<h1><a class="header" href="#gitgithub" id="gitgithub">Git/Github</a></h1>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+        
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+        
+        
+
+    </body>
+</html>
